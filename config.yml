@@ -1,0 +1,43 @@
+# Insurance Lead Radar — scan configuration
+# Edit here or override in the dashboard sidebar.
+
+platforms:          # which public sources to sweep
+  - pantip
+  - x
+  - facebook
+  - threads
+  - reddit
+
+results_per_query: 8      # firecrawl results per (platform x query)
+workers: 3                # parallel searches; >3 tends to hit Firecrawl 429s
+freshness: qdr:m          # qdr:d day · qdr:w week · qdr:m month · "" any time
+
+alert_threshold: 50       # only push an alert at/above this score (0-100)
+alert_channels:           # line · telegram · webhook · desktop
+  - line
+  - telegram
+  - desktop
+max_alerts_per_run: 8     # don't spam yourself on the first big backfill
+
+# Queries are written the way real people ask, not the way marketers write.
+queries:
+  - อยากทำประกันสุขภาพ แนะนำ
+  - ประกันสุขภาพ เหมาจ่าย เจ้าไหนดี
+  - กำลังมองหาประกันชีวิต ควรทำไหม
+  - ประกันโรคร้ายแรง แนะนำ ตัวไหนดี
+  - เพิ่งเริ่มทำงาน ควรทำประกันอะไรก่อน
+  - ท้อง ประกันสุขภาพ ค่าคลอด แนะนำ
+  - ลาออกจากงาน ประกันกลุ่มหมด ทำประกันเอง
+  - ประกันลดหย่อนภาษี ปีนี้ ตัวไหนดี
+  - ประกันบำนาญ วางแผนเกษียณ แนะนำ
+  - ประกันรถยนต์ ชั้น 1 เจ้าไหนดี ราคา
+  - ประกันเดินทาง ต่างประเทศ วีซ่า แนะนำ
+  - ประกันสุขภาพให้พ่อแม่ ผู้สูงอายุ แนะนำ
+  - เคลมประกันไม่ผ่าน อยากเปลี่ยนบริษัท
+  - ทำประกันสุขภาพให้ลูก แนะนำ
+  - ยูนิตลิงค์ ดีไหม ควรทำ
+
+reddit_queries:
+  - health insurance Thailand recommend which company
+  - life insurance advice should I buy
+  - expat insurance Thailand looking for
